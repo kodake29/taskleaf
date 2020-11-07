@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title
+      | Taskleaf
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+  .app-title.navber.navber-expand-md.navberlight.bg-left.navber-brand Taskleaf
+  .container
+   -if flash.notice.present?
+    .alert.alert-success= flash.notice
+   = yield
