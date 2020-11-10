@@ -3,9 +3,9 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     create_table :tasks do |t|
       t.string :name, limit: 30, null: false
       t.text :description
+      t.integer :user_id, null: false
 
       t.timestamps
-      t.index :name, unique: true
     end
   end
 end
